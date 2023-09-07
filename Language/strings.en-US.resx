@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Random" xml:space="preserve">
+    <value>Your number:</value>
+    <comment/>
+  </data>
+  <data name="RandomTitle" xml:space="preserve">
+    <value>Random Number</value>
+    <comment/>
+  </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>List of all commands:</value>
+    <comment/>
+  </data>
+  <data name="HelpMainCommands" xml:space="preserve">
+    <value>Main Commands</value>
+    <comment/>
+  </data>
+  <data name="HelpMainCommandsList" xml:space="preserve">
+    <value>random - A random number in a given range.
+	kick - Kick the user.
+	ban - Ban the user.
+	purge - Delete the specified number of messages.
+	language - Change current language.
+	flipcoin - Flip coin.
+	setprefix - Set custom prefix for bot. Only server administrator can do this.
+	resetprefix - Reset prefix to default. Only server administrator can do this.
+	forgotprefix - Remind custom prefix of the server, in case you forgot it. Use with default prefix a!
+	whatsnew - Sends changelog of the latest major update.</value>
+    <comment/>
+  </data>
+  <data name="NameError" xml:space="preserve">
+    <value>Error</value>
+    <comment/>
+  </data>
+  <data name="KickChooseUser" xml:space="preserve">
+    <value>:x: You did not specify a user.</value>
+    <comment/>
+  </data>
+  <data name="KickTitle" xml:space="preserve">
+    <value>Kick user</value>
+    <comment/>
+  </data>
+  <data name="NotEnoughRights" xml:space="preserve">
+    <value>:x: You don't have enough rights!</value>
+    <comment/>
+  </data>
+  <data name="KickAdministrator" xml:space="preserve">
+    <value>:x: You can't kick an Administrator.</value>
+    <comment/>
+  </data>
+  <data name="KickKicked" xml:space="preserve">
+    <value>You were kicked from the server:</value>
+    <comment/>
+  </data>
+  <data name="KickReason" xml:space="preserve">
+    <value>Reason:</value>
+    <comment/>
+  </data>
+  <data name="KickNoReason" xml:space="preserve">
+    <value>Reason not specified.</value>
+    <comment/>
+  </data>
+  <data name="KickKicked1" xml:space="preserve">
+    <value>:white_check_mark: User</value>
+    <comment/>
+  </data>
+  <data name="KickKicked2" xml:space="preserve">
+    <value>was kicked from this server.</value>
+    <comment/>
+  </data>
+  <data name="NameSuccess" xml:space="preserve">
+    <value>Success.</value>
+    <comment/>
+  </data>
+  <data name="BanTitle" xml:space="preserve">
+    <value>Ban user</value>
+    <comment/>
+  </data>
+  <data name="BanAdministrator" xml:space="preserve">
+    <value>:x: You can't ban an Administrator.</value>
+    <comment/>
+  </data>
+  <data name="BanBanned" xml:space="preserve">
+    <value>You were banned from the server:</value>
+    <comment/>
+  </data>
+  <data name="BanReason" xml:space="preserve">
+    <value>Reason:</value>
+    <comment/>
+  </data>
+  <data name="BanNoReason" xml:space="preserve">
+    <value>Reason not specified.</value>
+    <comment/>
+  </data>
+  <data name="BanBanned1" xml:space="preserve">
+    <value>:white_check_mark: User</value>
+    <comment/>
+  </data>
+  <data name="BanBanned2" xml:space="preserve">
+    <value>was banned.</value>
+    <comment/>
+  </data>
+  <data name="PurgeTitle" xml:space="preserve">
+    <value>Purge chat</value>
+    <comment/>
+  </data>
+  <data name="PurgeInvalidAmount" xml:space="preserve">
+    <value>:x: Messages amount should be greater than 0.</value>
+    <comment/>
+  </data>
+  <data name="PurgeInProgress" xml:space="preserve">
+    <value>Purge in progress...</value>
+    <comment/>
+  </data>
+  <data name="PurgeNoMessages" xml:space="preserve">
+    <value>:x: There is no messages.</value>
+    <comment/>
+  </data>
+  <data name="PurgeDone" xml:space="preserve">
+    <value>:white_check_mark: Done. Purged</value>
+    <comment/>
+  </data>
+  <data name="PurgeDone2" xml:space="preserve">
+    <value>messages.</value>
+    <comment/>
+  </data>
+  <data name="FlipCoinTitle" xml:space="preserve">
+    <value>Flip coin</value>
+    <comment/>
+  </data>
+  <data name="FlipCoinHeads" xml:space="preserve">
+    <value>:coin: Heads.</value>
+    <comment/>
+  </data>
+  <data name="FlipCoinTails" xml:space="preserve">
+    <value>:coin: Tails.</value>
+    <comment/>
+  </data>
+  <data name="CustomPrefixTitle" xml:space="preserve">
+    <value>Custom prefix</value>
+    <comment/>
+  </data>
+  <data name="SetPrefixNotEnoughArguments" xml:space="preserve">
+    <value>:x: Specify your prefix.</value>
+    <comment/>
+  </data>
+  <data name="SetPrefixDone" xml:space="preserve">
+    <value>:white_check_mark: Done. Server prefix is now:</value>
+    <comment/>
+  </data>
+  <data name="WhatsNew" xml:space="preserve">
+    <value>To be added.</value>
+    <comment/>
+  </data>
+  <data name="ResetPrefixTitle" xml:space="preserve">
+    <value>Reset prefix</value>
+    <comment/>
+  </data>
+  <data name="ResetPrefixDone" xml:space="preserve">
+    <value>Done. Prefix was reset to default "a!".</value>
+    <comment/>
+  </data>
+  <data name="ForgotPrefix" xml:space="preserve">
+    <value>This server prefix:</value>
+    <comment/>
+  </data>
+</root>
