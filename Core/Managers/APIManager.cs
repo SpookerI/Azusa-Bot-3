@@ -6,7 +6,6 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using BooruSharp;
 
 namespace Azusa.bot_3.Core.Managers
 {
@@ -56,29 +55,16 @@ namespace Azusa.bot_3.Core.Managers
             File.Delete(replyPath + "replyV2_" + randomNumber + ".json");
             return url;
         }
-        public static async Task<string> GetAPIGelbooru(string tags)
-        {
-            var booru = new BooruSharp.Booru.Gelbooru();
-            try
-            {
-                var result = await booru.GetRandomPostAsync("fujiwara_no_mokou");
-                string url = result.FileUrl.AbsoluteUri;
-                return url;
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex);
-                return "ERR";
-            };
-            /*ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls13 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
-            ServicePointManager.ServerCertificateValidationCallback +=  (sender, certificate, chain, sslPolicyErrors) => true;
+        public static string GetAPIGelbooru(string tags)
+        { 
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls13 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
             string url = null;
             string apiKey = ConfigManager.Config.gelbooruAPIKey;
             Random rnd = new Random();
             int randomNumber = rnd.Next(0, 1000);
             try
             {
-                //api.DownloadFile(gelbooruAPI + tags + $"&json=1&limit=1&pid=0{apiKey}", replyPath + "gelbooruAPI_" + randomNumber + ".json");
+                api.DownloadFile(gelbooruAPI + tags + $"&json=1&limit=1&pid=0{apiKey}", replyPath + "gelbooruAPI_" + randomNumber + ".json");
                 var jsonCount = File.ReadAllText(replyPath + "gelbooruAPI_" + randomNumber + ".json");
                 var checkCount = JsonConvert.DeserializeObject<dynamic>(jsonCount);
                 int postCount = checkCount["@attributes"]["count"]; // Checks overall amount of posts by this tags.
@@ -102,9 +88,10 @@ namespace Azusa.bot_3.Core.Managers
             }
             catch(Exception ex)
             {
-                Console.WriteLine("Gelbooru API: An exception has occured: ", ex);
+                Console.WriteLine("Gelbooru API: An exception has occured: ", ex.ToString());
+                Console.WriteLine(ex.StackTrace);
                 return "ERR";
-            }*/
+            }
         }
     }
 }

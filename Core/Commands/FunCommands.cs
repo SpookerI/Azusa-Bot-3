@@ -250,7 +250,7 @@ namespace Azusa.bot_3.Core.Commands
         public async Task Gelbooru([Remainder]string tags)
         {
             var eb = new EmbedBuilder();
-            string url = APIManager.GetAPIGelbooru(tags + " -rating:questionable -rating:explicit").ToString();
+            string url = APIManager.GetAPIGelbooru(tags + " -rating:questionable -rating:explicit");
             if(url == "Not found")
             {
                 eb.WithTitle($"{StringManager.getString(Context.Guild.Id, "GelbooruAPITitle")}");
