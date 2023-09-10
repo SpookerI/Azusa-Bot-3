@@ -134,16 +134,7 @@
     <comment/>
   </data>
   <data name="HelpMainCommandsList" xml:space="preserve">
-    <value>random - A random number in a given range.
-	kick - Kick the user.
-	ban - Ban the user.
-	purge - Delete the specified number of messages.
-	language - Change current language.
-	flipcoin - Flip coin.
-	setprefix - Set custom prefix for bot. Only server administrator can do this.
-	resetprefix - Reset prefix to default. Only server administrator can do this.
-	forgotprefix - Remind custom prefix of the server, in case you forgot it. Use with default prefix a!
-	whatsnew - Sends changelog of the latest major update.</value>
+    <value>random - A random number in a given range.	kick - Kick the user.	ban - Ban the user.	purge - Delete the specified number of messages.	language - Change current language.	flipcoin - Flip coin.	setprefix - Set custom prefix for bot. Only server administrator can do this.	resetprefix - Reset prefix to default. Only server administrator can do this.	forgotprefix - Remind custom prefix of the server, in case you forgot it. Use with default prefix a!	whatsnew - Sends changelog of the latest major update.</value>
     <comment/>
   </data>
   <data name="NameError" xml:space="preserve">
@@ -280,6 +271,138 @@
   </data>
   <data name="ForgotPrefix" xml:space="preserve">
     <value>This server prefix:</value>
+    <comment/>
+  </data>
+  <data name="HelloTitle" xml:space="preserve">
+    <value>Greetings</value>
+    <comment/>
+  </data>
+  <data name="HelloMsg" xml:space="preserve">
+    <value>Hello,</value>
+    <comment/>
+  </data>
+  <data name="GoodJobTitle" xml:space="preserve">
+    <value>Good Job</value>
+    <comment/>
+  </data>
+  <data name="GoodJobMsg" xml:space="preserve">
+    <value>Thank you, it means a lot to me!</value>
+    <comment/>
+  </data>
+  <data name="YouAreCuteTitle" xml:space="preserve">
+    <value>You are cute</value>
+    <comment/>
+  </data>
+  <data name="YouAreCuteMsg" xml:space="preserve">
+    <value>Thanks for the compliment ;)</value>
+    <comment/>
+  </data>
+  <data name="HugNull" xml:space="preserve">
+    <value>Hugged themself...?</value>
+    <comment/>
+  </data>
+  <data name="HugMention" xml:space="preserve">
+    <value>hugged</value>
+    <comment/>
+  </data>
+  <data name="HugMention2" xml:space="preserve">
+    <value>How cute!</value>
+    <comment/>
+  </data>
+  <data name="HugTitle" xml:space="preserve">
+    <value>Hug</value>
+    <comment/>
+  </data>
+  <data name="KissTitle" xml:space="preserve">
+    <value>Kiss</value>
+    <comment/>
+  </data>
+  <data name="KissNull" xml:space="preserve">
+    <value>kissed themself...? What?</value>
+    <comment/>
+  </data>
+  <data name="KissMention" xml:space="preserve">
+    <value>kissed</value>
+    <comment/>
+  </data>
+  <data name="PatTitle" xml:space="preserve">
+    <value>Pat</value>
+    <comment/>
+  </data>
+  <data name="PatNull" xml:space="preserve">
+    <value>patted themself... That's just sad...</value>
+    <comment/>
+  </data>
+  <data name="PatMention" xml:space="preserve">
+    <value>patted</value>
+    <comment/>
+  </data>
+  <data name="CryTitle" xml:space="preserve">
+    <value>Cry</value>
+    <comment/>
+  </data>
+  <data name="CryMsg" xml:space="preserve">
+    <value>cries.</value>
+    <comment/>
+  </data>
+  <data name="SlapTitle" xml:space="preserve">
+    <value>Slap</value>
+    <comment/>
+  </data>
+  <data name="SlapNull" xml:space="preserve">
+    <value>slapped themself... Why?</value>
+    <comment/>
+  </data>
+  <data name="SlapMention" xml:space="preserve">
+    <value>slapped</value>
+    <comment/>
+  </data>
+  <data name="SlapMention2" xml:space="preserve">
+    <value>How rude!</value>
+    <comment/>
+  </data>
+  <data name="LickTitle" xml:space="preserve">
+    <value>Lick</value>
+    <comment/>
+  </data>
+  <data name="LickNull" xml:space="preserve">
+    <value>licked themself...?</value>
+    <comment/>
+  </data>
+  <data name="LickMention" xml:space="preserve">
+    <value>licked</value>
+    <comment/>
+  </data>
+  <data name="GPTTitle" xml:space="preserve">
+    <value>ChatGPT</value>
+    <comment/>
+  </data>
+  <data name="GPTAskNull" xml:space="preserve">
+    <value>:warning: Please provide your question.</value>
+    <comment/>
+  </data>
+  <data name="GPTAsk" xml:space="preserve">
+    <value>:ok_hand: OK! I'll try to ask ChatGPT. It might take some time.</value>
+    <comment/>
+  </data>
+  <data name="GPTAskResponse" xml:space="preserve">
+    <value>:white_check_mark: I've got a response! Here it is.</value>
+    <comment/>
+  </data>
+  <data name="GPTAskError" xml:space="preserve">
+    <value>:x: Uh-oh, something went wrong. Error:</value>
+    <comment/>
+  </data>
+  <data name="GelbooruAPITitle" xml:space="preserve">
+    <value>Gelbooru</value>
+    <comment/>
+  </data>
+  <data name="NSFWAPINotFound" xml:space="preserve">
+    <value>:cry: Nothing found! Your tags:</value>
+    <comment/>
+  </data>
+  <data name="NSFWAPIError" xml:space="preserve">
+    <value>:x: An error has occured! Maybe an API is down.</value>
     <comment/>
   </data>
 </root>

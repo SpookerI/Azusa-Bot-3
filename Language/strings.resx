@@ -134,16 +134,7 @@
     <comment/>
   </data>
   <data name="HelpMainCommandsList" xml:space="preserve">
-    <value>random - Случайное число в заданном диапозоне. Пример: a!random 727 1337
-	kick - Кикнуть пользователя.
-	ban - Забанить пользователя.
-	purge - Удалить заданное количество сообщений.
-	language - Сменить текущий язык.
-	flipcoin - Подкинуть монетку.
-	setprefix - Установить кастомный префикс для бота. Только администратор сервера может выполнить эту команду.
-	resetprefix - Сбросить префикс на стандартный. Только администратор сервера может выполнить эту команду.
-	forgotprefix - Напомнить кастомный префикс, если вы его забыли. Используйте со стандартным префиксом a!.
-	whatsnew - Отправляет changelog последнего крупного обновления.</value>
+    <value>random - Случайное число в заданном диапозоне. Пример: a!random 727 1337	kick - Кикнуть пользователя.	ban - Забанить пользователя.	purge - Удалить заданное количество сообщений.	language - Сменить текущий язык.	flipcoin - Подкинуть монетку.	setprefix - Установить кастомный префикс для бота. Только администратор сервера может выполнить эту команду.	resetprefix - Сбросить префикс на стандартный. Только администратор сервера может выполнить эту команду.	forgotprefix - Напомнить кастомный префикс, если вы его забыли. Используйте со стандартным префиксом a!.	whatsnew - Отправляет changelog последнего крупного обновления.</value>
     <comment/>
   </data>
   <data name="NameError" xml:space="preserve">
@@ -151,7 +142,7 @@
     <comment/>
   </data>
   <data name="KickChooseUser" xml:space="preserve">
-    <value>:x: Вы не указали пользователя.</value>
+    <value>:warning: Вы не указали пользователя.</value>
     <comment/>
   </data>
   <data name="KickTitle" xml:space="preserve">
@@ -159,11 +150,11 @@
     <comment/>
   </data>
   <data name="NotEnoughRights" xml:space="preserve">
-    <value>:x: У вас недостаточно прав!</value>
+    <value>:warning: У вас недостаточно прав!</value>
     <comment/>
   </data>
   <data name="KickAdministrator" xml:space="preserve">
-    <value>:x: Вы не можете выгнать администратора.</value>
+    <value>:warning: Вы не можете выгнать администратора.</value>
     <comment/>
   </data>
   <data name="KickKicked" xml:space="preserve">
@@ -195,7 +186,7 @@
     <comment/>
   </data>
   <data name="BanAdministrator" xml:space="preserve">
-    <value>:x: Вы не можете забанить администратора.</value>
+    <value>:warning: Вы не можете забанить администратора.</value>
     <comment/>
   </data>
   <data name="BanBanned" xml:space="preserve">
@@ -223,7 +214,7 @@
     <comment/>
   </data>
   <data name="PurgeInvalidAmount" xml:space="preserve">
-    <value>:x: Количество сообщений должно быть больше 0.</value>
+    <value>:warning: Количество сообщений должно быть больше 0.</value>
     <comment/>
   </data>
   <data name="PurgeInProgress" xml:space="preserve">
@@ -231,7 +222,7 @@
     <comment/>
   </data>
   <data name="PurgeNoMessages" xml:space="preserve">
-    <value>:x: Сообщения отсутствуют.</value>
+    <value>:warning: Сообщения отсутствуют.</value>
     <comment/>
   </data>
   <data name="PurgeDone" xml:space="preserve">
@@ -259,7 +250,7 @@
     <comment/>
   </data>
   <data name="SetPrefixNotEnoughArguments" xml:space="preserve">
-    <value>:x: Укажите префикс.</value>
+    <value>:warning: Укажите префикс.</value>
     <comment/>
   </data>
   <data name="SetPrefixDone" xml:space="preserve">
@@ -280,6 +271,138 @@
   </data>
   <data name="ForgotPrefix" xml:space="preserve">
     <value>Префикс данного сервера:</value>
+    <comment/>
+  </data>
+  <data name="HelloTitle" xml:space="preserve">
+    <value>Приветствие</value>
+    <comment/>
+  </data>
+  <data name="HelloMsg" xml:space="preserve">
+    <value>Привет,</value>
+    <comment/>
+  </data>
+  <data name="GoodJobTitle" xml:space="preserve">
+    <value>Хорошая работа</value>
+    <comment/>
+  </data>
+  <data name="GoodJobMsg" xml:space="preserve">
+    <value>Спасибо, это многое для меня значит!</value>
+    <comment/>
+  </data>
+  <data name="YouAreCuteTitle" xml:space="preserve">
+    <value>Ты милая</value>
+    <comment/>
+  </data>
+  <data name="YouAreCuteMsg" xml:space="preserve">
+    <value>Спасибо за комплимент ;)</value>
+    <comment/>
+  </data>
+  <data name="HugNull" xml:space="preserve">
+    <value>обнял сам себя...?</value>
+    <comment/>
+  </data>
+  <data name="HugMention" xml:space="preserve">
+    <value>обнял</value>
+    <comment/>
+  </data>
+  <data name="HugMention2" xml:space="preserve">
+    <value>Как это мило!</value>
+    <comment/>
+  </data>
+  <data name="HugTitle" xml:space="preserve">
+    <value>Обнимашки!</value>
+    <comment/>
+  </data>
+  <data name="KissTitle" xml:space="preserve">
+    <value>Поцелуй</value>
+    <comment/>
+  </data>
+  <data name="KissNull" xml:space="preserve">
+    <value>поцеловал сам себя...? Что?</value>
+    <comment/>
+  </data>
+  <data name="KissMention" xml:space="preserve">
+    <value>поцеловал</value>
+    <comment/>
+  </data>
+  <data name="PatTitle" xml:space="preserve">
+    <value>Поглаживание</value>
+    <comment/>
+  </data>
+  <data name="PatNull" xml:space="preserve">
+    <value>погладил сам себя... Это даже грустно...</value>
+    <comment/>
+  </data>
+  <data name="PatMention" xml:space="preserve">
+    <value>погладил</value>
+    <comment/>
+  </data>
+  <data name="CryTitle" xml:space="preserve">
+    <value>Плакать</value>
+    <comment/>
+  </data>
+  <data name="CryMsg" xml:space="preserve">
+    <value>плачет.</value>
+    <comment/>
+  </data>
+  <data name="SlapTitle" xml:space="preserve">
+    <value>Удар</value>
+    <comment/>
+  </data>
+  <data name="SlapNull" xml:space="preserve">
+    <value>ударил сам себя... Зачем?</value>
+    <comment/>
+  </data>
+  <data name="SlapMention" xml:space="preserve">
+    <value>ударил</value>
+    <comment/>
+  </data>
+  <data name="SlapMention2" xml:space="preserve">
+    <value>Как грубо!</value>
+    <comment/>
+  </data>
+  <data name="LickTitle" xml:space="preserve">
+    <value>Лизание</value>
+    <comment/>
+  </data>
+  <data name="LickNull" xml:space="preserve">
+    <value>лизнул сам себя...?</value>
+    <comment/>
+  </data>
+  <data name="LickMention" xml:space="preserve">
+    <value>лизнул</value>
+    <comment/>
+  </data>
+  <data name="GPTTitle" xml:space="preserve">
+    <value>ChatGPT</value>
+    <comment/>
+  </data>
+  <data name="GPTAskNull" xml:space="preserve">
+    <value>:warning: Вы не указали свой вопрос!</value>
+    <comment/>
+  </data>
+  <data name="GPTAsk" xml:space="preserve">
+    <value>:ok_hand: ОК! Попробую спросить у ChatGPT, пожалуйста подождите, это может занять некоторое время.</value>
+    <comment/>
+  </data>
+  <data name="GPTAskResponse" xml:space="preserve">
+    <value>:white_check_mark: Я получила ответ! Вот он.</value>
+    <comment/>
+  </data>
+  <data name="GPTAskError" xml:space="preserve">
+    <value>:x: Ой-ей что то пошло не так. Ошибка:</value>
+    <comment/>
+  </data>
+  <data name="GelbooruAPITitle" xml:space="preserve">
+    <value>Gelbooru</value>
+    <comment/>
+  </data>
+  <data name="NSFWAPINotFound" xml:space="preserve">
+    <value>:cry: Ничего не найдено! Ваши теги:</value>
+    <comment/>
+  </data>
+  <data name="NSFWAPIError" xml:space="preserve">
+    <value>:x: Произошла ошибка! Возможно API лежит.</value>
     <comment/>
   </data>
 </root>

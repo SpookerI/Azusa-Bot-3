@@ -53,6 +53,8 @@ namespace Azusa.bot_3.Core
                 File.Create("Config/servers.txt");
             if(!Directory.Exists("Resources"))
                 Directory.CreateDirectory("Resources");    
+            if(!Directory.Exists("API"))
+                Directory.CreateDirectory("API");
 
             await CommandManager.LoadCommandsAsync();
             await EventManager.LoadCommands();
