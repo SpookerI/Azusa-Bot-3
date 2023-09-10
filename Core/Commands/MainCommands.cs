@@ -35,6 +35,12 @@ namespace Azusa.bot_3.Core.Commands
                 x.Value = StringManager.getString(Context.Guild.Id, "HelpMainCommandsList");
                 x.IsInline = false;
             });
+            eb.AddField(x =>
+            {
+                x.Name = StringManager.getString(Context.Guild.Id, "HelpFunCommands");
+                x.Value = StringManager.getString(Context.Guild.Id, "HelpFunCommandsList");
+                x.IsInline = false;
+            });
             await Context.Channel.SendMessageAsync("", false, eb.Build());
         }
         [Command("kick")]

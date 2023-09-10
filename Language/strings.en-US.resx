@@ -134,8 +134,34 @@
     <comment/>
   </data>
   <data name="HelpMainCommandsList" xml:space="preserve">
-    <value>random - A random number in a given range.	kick - Kick the user.	ban - Ban the user.	purge - Delete the specified number of messages.	language - Change current language.	flipcoin - Flip coin.	setprefix - Set custom prefix for bot. Only server administrator can do this.	resetprefix - Reset prefix to default. Only server administrator can do this.	forgotprefix - Remind custom prefix of the server, in case you forgot it. Use with default prefix a!	whatsnew - Sends changelog of the latest major update.</value>
+    <value>random - A random number in a given range.
+	kick - Kick the user.
+	ban - Ban the user.
+	purge - Delete the specified number of messages.
+	language - Change current language.	flipcoin - Flip coin.
+	setprefix - Set custom prefix for bot. Only server administrator can do this.
+	resetprefix - Reset prefix to default. Only server administrator can do this.
+	forgotprefix - Remind custom prefix of the server, in case you forgot it. Use with default prefix a!
+	whatsnew - Sends changelog of the latest major update.</value>
     <comment/>
+  </data>
+  <data name="HelpFunCommands" xml:space="preserve">
+	<value>Fun Commands</value>
+	<comment/>
+  </data>
+  <data name="HelpFunCommandsList" xml:space="preserve">
+	<value>hello - Say hi to the bot.
+	goodjob - Praise the bot.
+	chatviblyadkov - Sen gif: Chat viblyadkov(Rus).
+	hug - Hug another user.
+	kiss - Kiss another user.
+	pat - Pat another user.
+	cry - Start crying.
+	slap - Slap another user.
+	lick - Lick another user.
+	chatgpt - Ask a question to ChatGPT. Takes some time, be patient.
+	safegelbooru - Random post from Gelbooru. Filters NSFW posts.</value>
+	<comment/>
   </data>
   <data name="NameError" xml:space="preserve">
     <value>Error</value>
