@@ -12,7 +12,6 @@ namespace Azusa.bot_3.Core.Commands
     public class FunCommands : ModuleBase<SocketCommandContext>
     {
         StringManager StringManager = new StringManager();
-        private string ResourcePath = "Resources";
 
         [Command("hello")]
         public async Task Hello()

@@ -41,6 +41,12 @@ namespace Azusa.bot_3.Core.Commands
                 x.Value = StringManager.getString(Context.Guild.Id, "HelpFunCommandsList");
                 x.IsInline = false;
             });
+            eb.AddField(x =>
+            {
+                x.Name = StringManager.getString(Context.Guild.Id, "HelpNSFWCommands");
+                x.Value = StringManager.getString(Context.Guild.Id, "HelpNSFWCommandsList");
+                x.IsInline = false;
+            });
             await Context.Channel.SendMessageAsync("", false, eb.Build());
         }
         [Command("kick")]
@@ -229,7 +235,7 @@ namespace Azusa.bot_3.Core.Commands
             var manageChannelsRole = (user as IGuildUser).GuildPermissions.ManageChannels;
             var manageMessagesRole = (user as IGuildUser).GuildPermissions.ManageMessages;
 
-            if (!manageChannelsRole && manageMessagesRole)
+            if (!manageChannelsRole && !manageMessagesRole)
             {
                 eb.WithTitle(StringManager.getString(Context.Guild.Id, "PurgeTitle"));
                 eb.AddField(x =>
@@ -239,6 +245,7 @@ namespace Azusa.bot_3.Core.Commands
                     x.IsInline = false;
                 });
                 await ReplyAsync("", false, eb.Build());
+                return;
             }
             if (amount <= 0)
             {

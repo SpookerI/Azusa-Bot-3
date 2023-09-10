@@ -138,7 +138,8 @@
 	kick - Kick the user.
 	ban - Ban the user.
 	purge - Delete the specified number of messages.
-	language - Change current language.	flipcoin - Flip coin.
+	language - Change current language.	
+	flipcoin - Flip coin.
 	setprefix - Set custom prefix for bot. Only server administrator can do this.
 	resetprefix - Reset prefix to default. Only server administrator can do this.
 	forgotprefix - Remind custom prefix of the server, in case you forgot it. Use with default prefix a!
@@ -146,22 +147,22 @@
     <comment/>
   </data>
   <data name="HelpFunCommands" xml:space="preserve">
-	<value>Fun Commands</value>
-	<comment/>
+    <value>Fun Commands</value>
+    <comment/>
   </data>
   <data name="HelpFunCommandsList" xml:space="preserve">
-	<value>hello - Say hi to the bot.
+    <value>hello - Say hi to the bot.
 	goodjob - Praise the bot.
-	chatviblyadkov - Sen gif: Chat viblyadkov(Rus).
+	chatviblyadkov - Send gif: Chat viblyadkov(Rus).
 	hug - Hug another user.
 	kiss - Kiss another user.
 	pat - Pat another user.
 	cry - Start crying.
 	slap - Slap another user.
 	lick - Lick another user.
-	chatgpt - Ask a question to ChatGPT. Takes some time, be patient.
-	safegelbooru - Random post from Gelbooru. Filters NSFW posts.</value>
-	<comment/>
+	chatgpt - Ask a question on ChatGPT. Might take some time, please be patient.
+	safegelbooru - Get post with your tags from Gelbooru. Filters NSFW content</value>
+    <comment/>
   </data>
   <data name="NameError" xml:space="preserve">
     <value>Error</value>
@@ -429,6 +430,46 @@
   </data>
   <data name="NSFWAPIError" xml:space="preserve">
     <value>:x: An error has occured! Maybe an API is down.</value>
+    <comment/>
+  </data>
+  <data name="NSFWCommandTitle" xml:space="preserve">
+    <value>NSFW Content</value>
+    <comment/>
+  </data>
+  <data name="NSFWCommandChannelError" xml:space="preserve">
+    <value>:warning: This command can only be used in NSFW channels!</value>
+    <comment/>
+  </data>
+  <data name="Rule34APITitle" xml:space="preserve">
+    <value>Rule34</value>
+    <comment/>
+  </data>
+  <data name="HelpNSFWCommands" xml:space="preserve">
+    <value>NSFW Commands</value>
+    <comment/>
+  </data>
+  <data name="HelpNSFWCommandsList" xml:space="preserve">
+    <value>All of this commands can only be used in NSFW channels.
+	ass -  Ass picture or gif.
+	anal - Anal picture or gif.
+	sex - Sex gif.
+	masturbation - Masturbation picture or gif.
+	panties - Panties picture or gif.
+	pussy - Pussy picture or gif.
+	blowjob - Blowjob picture or gif.
+	footjob - Footjob picture or gif.
+	handjob - Handjob picture or gif.
+	boobs - Boobs picture or gif.
+	thighs - Thighs picture or gif.
+	neko - NSFW picture or gif with neko.
+	hentai - Random hentai picture or gif.
+	incest - Incest picture or gif.
+	yuri - Yuri picture or gif.
+	femboy - Femboy picture.
+	paizuri - Boobjob picture.
+	kitsune - Kitsune picture.
+	gelbooru - Get post with your tags from Gelbooru.
+	rule34 - Get post with your tags from Rule34.xxx</value>
     <comment/>
   </data>
 </root>
