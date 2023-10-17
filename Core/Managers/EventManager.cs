@@ -1,13 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using Azusa.bot_3.Core.Modules;
 using Azusa.bot_3.Language;
 using Discord;
 using Discord.Commands;
 using Discord.Interactions;
 using Discord.WebSocket;
-using Lavalink4NET;
-using Lavalink4NET.Players.Queued;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Azusa.bot_3.Core.Managers
@@ -29,12 +26,6 @@ namespace Azusa.bot_3.Core.Managers
             {
                 Console.WriteLine($"[{DateTime.Now}]\t({message.Source})\t{message.Message}"); // Logs
                 return Task.CompletedTask;
-            };
-            var sCommands = ServiceManager.Provider.GetRequiredService<InteractionService>();
-            await ServiceManager.Provider.GetRequiredService<InteractionManager>().InitializeAsync();
-            _client.Ready += async () =>
-            {
-                await sCommands.RegisterCommandsGloballyAsync();
             };
             _client.Ready += OnReady; // Executed at startup.
             _client.MessageReceived += OnMessageReceived;

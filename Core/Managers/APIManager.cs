@@ -56,7 +56,7 @@ namespace Azusa.bot_3.Core.Managers
         }
         public static string GetAPIGelbooru(string tags)
         { 
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls13;
             string url = null;
             string apiKey = ConfigManager.Config.gelbooruAPIKey;
             Random rnd = new Random();
@@ -94,7 +94,7 @@ namespace Azusa.bot_3.Core.Managers
         }
         public static string GetAPIRule34(string tags)
         {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls13;
             string url = null;
             string apiKey = ConfigManager.Config.rule34APIKey;
             Random rnd = new Random();

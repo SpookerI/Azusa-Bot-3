@@ -40,8 +40,6 @@ namespace Azusa.bot_3.Core
 
             collection.AddSingleton(_client);
             collection.AddSingleton(_commandService);
-            collection.AddSingleton(x => new InteractionService(x.GetRequiredService<DiscordSocketClient>()));
-            collection.AddSingleton<InteractionManager>();
             collection.AddSingleton(_discordClientWrapper);
             collection.AddLavalink();
             collection.ConfigureLavalink(config =>
