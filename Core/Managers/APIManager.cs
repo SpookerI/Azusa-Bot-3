@@ -108,7 +108,7 @@ namespace Azusa.bot_3.Core.Managers
                 XmlNode postsNode = xmlDoc.SelectSingleNode("/posts"); // find posts element
                 if (postsNode != null)
                 {
-                    //get value of atribute count
+                    //get value of attribute count
                     countValue = postsNode.Attributes["count"].Value;
                 }
                 else

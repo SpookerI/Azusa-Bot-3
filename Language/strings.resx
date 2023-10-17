@@ -472,4 +472,8 @@
 	rule34 - Пост по тегам с сайта Rule34.xxx</value>
     <comment/>
   </data>
+  <data name="HelpNSFW" xml:space="preserve">
+    <value>Используйте комманду - a!help nsfw</value>
+    <comment/>
+  </data>
 </root>

@@ -1,10 +1,13 @@
 using System;
 using System.Threading.Tasks;
+using Azusa.bot_3.Core.Modules;
 using Azusa.bot_3.Language;
 using Discord;
 using Discord.Commands;
 using Discord.Interactions;
 using Discord.WebSocket;
+using Lavalink4NET;
+using Lavalink4NET.Players.Queued;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Azusa.bot_3.Core.Managers

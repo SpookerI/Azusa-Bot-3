@@ -472,4 +472,8 @@
 	rule34 - Get post with your tags from Rule34.xxx</value>
     <comment/>
   </data>
+  <data name="HelpNSFW" xml:space="preserve">
+    <value>Use command - a!help nsfw</value>
+    <comment/>
+  </data>
 </root>
