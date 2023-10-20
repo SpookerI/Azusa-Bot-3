@@ -27,12 +27,6 @@ namespace Azusa.bot_3.Core.Managers
                 Console.WriteLine($"[{DateTime.Now}]\t({message.Source})\t{message.Message}"); // Logs
                 return Task.CompletedTask;
             };
-            var sCommands = ServiceManager.Provider.GetRequiredService<InteractionService>();
-            await ServiceManager.Provider.GetRequiredService<InteractionManager>().InitializeAsync();
-            _client.Ready += async () =>
-            {
-                await sCommands.RegisterCommandsGloballyAsync();
-            };
             _client.Ready += OnReady; // Executed at startup.
             _client.MessageReceived += OnMessageReceived;
         }

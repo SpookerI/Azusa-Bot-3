@@ -44,6 +44,8 @@ namespace Azusa.bot_3.Core.Managers
             public string chatGPTKey { get; private set; }
             [JsonProperty("gelbooruAPIKEYURL")]
             public string gelbooruAPIKey { get; private set; }
+            [JsonProperty("rule34APIKEYURL")]
+            public string rule34APIKey { get; private set; }
         }
     }
 }

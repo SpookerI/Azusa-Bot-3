@@ -1,13 +1,15 @@
 using Discord.WebSocket;
 using Discord.Commands;
 using Discord;
-using Lavalink4NET.DiscordNet;
 using Microsoft.Extensions.DependencyInjection;
 using Discord.Interactions;
 using Azusa.bot_3.Core.Managers;
 using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
+using Lavalink4NET.DiscordNet;
+using Lavalink4NET.Extensions;
+using System;
 
 namespace Azusa.bot_3.Core
 {
@@ -38,9 +40,14 @@ namespace Azusa.bot_3.Core
 
             collection.AddSingleton(_client);
             collection.AddSingleton(_commandService);
-            collection.AddSingleton(x => new InteractionService(x.GetRequiredService<DiscordSocketClient>()));
-            collection.AddSingleton<InteractionManager>();
             collection.AddSingleton(_discordClientWrapper);
+            collection.AddLavalink();
+            collection.ConfigureLavalink(config =>
+            {
+                config.BaseAddress = new Uri("http://localhost:2333");
+                config.Passphrase = "22362236";
+                config.ReadyTimeout = TimeSpan.FromSeconds(10);
+            });
             ServiceManager.SetProvider(collection);
         }
         public async Task MainAsync()

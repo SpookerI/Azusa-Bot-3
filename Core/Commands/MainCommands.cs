@@ -25,8 +25,33 @@ namespace Azusa.bot_3.Core.Commands
             await Context.Channel.SendMessageAsync("", false, eb.Build());
         }
         [Command("help")]
-        public async Task HelpCommand()
+        public async Task HelpCommand(string helplist = null)
         {
+            ITextChannel channel = (ITextChannel)Context.Channel; // Get current channel to check for NSFW attribute.
+            if (helplist == "NSFW" || helplist == "nsfw")
+            {
+                if (channel.IsNsfw)
+                {
+                    var ebnsfw = new EmbedBuilder();
+                    ebnsfw.WithTitle(StringManager.getString(Context.Guild.Id, "HelpTitle"));
+                    ebnsfw.AddField(x =>
+                    {
+                        x.Name = StringManager.getString(Context.Guild.Id, "HelpNSFWCommands");
+                        x.Value = StringManager.getString(Context.Guild.Id, "HelpNSFWCommandsList");
+                        x.IsInline = false;
+                    });
+                    await Context.Channel.SendMessageAsync("", false, ebnsfw.Build());
+                    return;
+                }
+                else
+                {
+                    var ebnsfw = new EmbedBuilder();
+                    ebnsfw.WithTitle(StringManager.getString(Context.Guild.Id, "HelpTitle"));
+                    ebnsfw.WithDescription(StringManager.getString(Context.Guild.Id, "NSFWCommandChannelError"));
+                    await Context.Channel.SendMessageAsync("", false, ebnsfw.Build());
+                    return;
+                }
+            }
             var eb = new EmbedBuilder();
             eb.WithTitle(StringManager.getString(Context.Guild.Id, "HelpTitle"));
             eb.AddField(x =>
@@ -39,6 +64,18 @@ namespace Azusa.bot_3.Core.Commands
             {
                 x.Name = StringManager.getString(Context.Guild.Id, "HelpFunCommands");
                 x.Value = StringManager.getString(Context.Guild.Id, "HelpFunCommandsList");
+                x.IsInline = false;
+            });
+            eb.AddField(x =>
+            {
+                x.Name = StringManager.getString(Context.Guild.Id, "HelpMusicCommands");
+                x.Value = StringManager.getString(Context.Guild.Id, "HelpMusic");
+                x.IsInline = false;
+            });
+            eb.AddField(x =>
+            {
+                x.Name = StringManager.getString(Context.Guild.Id, "HelpNSFWCommands");
+                x.Value = StringManager.getString(Context.Guild.Id, "HelpNSFW");
                 x.IsInline = false;
             });
             await Context.Channel.SendMessageAsync("", false, eb.Build());
@@ -229,7 +266,7 @@ namespace Azusa.bot_3.Core.Commands
             var manageChannelsRole = (user as IGuildUser).GuildPermissions.ManageChannels;
             var manageMessagesRole = (user as IGuildUser).GuildPermissions.ManageMessages;
 
-            if (!manageChannelsRole && manageMessagesRole)
+            if (!manageChannelsRole && !manageMessagesRole)
             {
                 eb.WithTitle(StringManager.getString(Context.Guild.Id, "PurgeTitle"));
                 eb.AddField(x =>
@@ -239,6 +276,7 @@ namespace Azusa.bot_3.Core.Commands
                     x.IsInline = false;
                 });
                 await ReplyAsync("", false, eb.Build());
+                return;
             }
             if (amount <= 0)
             {

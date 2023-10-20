@@ -9,7 +9,7 @@ namespace Azusa.bot_3
 		private static void Main(string[] args)
 		{
 			ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
 			foreach(var arg in args)
 			{
 				switch(arg)
