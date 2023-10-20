@@ -134,7 +134,16 @@
     <comment/>
   </data>
   <data name="HelpMainCommandsList" xml:space="preserve">
-    <value>random - A random number in a given range.	kick - Kick the user.	ban - Ban the user.	purge - Delete the specified number of messages.	language - Change current language.		flipcoin - Flip coin.	setprefix - Set custom prefix for bot. Only server administrator can do this.	resetprefix - Reset prefix to default. Only server administrator can do this.	forgotprefix - Remind custom prefix of the server, in case you forgot it. Use with default prefix a!	whatsnew - Sends changelog of the latest major update.</value>
+    <value>random - A random number in a given range.
+	kick - Kick the user.
+	ban - Ban the user.
+	purge - Delete the specified number of messages.
+	language - Change current language.	
+	flipcoin - Flip coin.
+	setprefix - Set custom prefix for bot. Only server administrator can do this.
+	resetprefix - Reset prefix to default. Only server administrator can do this.
+	forgotprefix - Remind custom prefix of the server, in case you forgot it. Use with default prefix a!
+	whatsnew - Sends changelog of the latest major update.</value>
     <comment/>
   </data>
   <data name="HelpFunCommands" xml:space="preserve">
@@ -142,7 +151,17 @@
     <comment/>
   </data>
   <data name="HelpFunCommandsList" xml:space="preserve">
-    <value>hello - Say hi to the bot.	goodjob - Praise the bot.	chatviblyadkov - Send gif: Chat viblyadkov(Rus).	hug - Hug another user.	kiss - Kiss another user.	pat - Pat another user.	cry - Start crying.	slap - Slap another user.	lick - Lick another user.	chatgpt - Ask a question on ChatGPT. Might take some time, please be patient.	safegelbooru - Get post with your tags from Gelbooru. Filters NSFW content</value>
+    <value>hello - Say hi to the bot.
+	goodjob - Praise the bot.
+	chatviblyadkov - Send gif: Chat viblyadkov(Rus).
+	hug - Hug another user.
+	kiss - Kiss another user.
+	pat - Pat another user.
+	cry - Start crying.
+	slap - Slap another user.
+	lick - Lick another user.
+	chatgpt - Ask a question on ChatGPT. Might take some time, please be patient.(Beta)
+	safegelbooru - Get post with your tags from Gelbooru. Filters NSFW content</value>
     <comment/>
   </data>
   <data name="NameError" xml:space="preserve">
@@ -266,7 +285,28 @@
     <comment/>
   </data>
   <data name="WhatsNew" xml:space="preserve">
-    <value>To be added.</value>
+    <value>```Azusa.bot 3.0: New APIs and cosmetic changes.
+	
+Additions and improvements:
+	1. The bot now uses EmbedBuilder instead of plain text. It looks prettier.
+	2. Added Gelbooru API. Allows you to search for any anime pictures by tags.
+		Commands: safegelbooru - Filters NSFW pictures. gelbooru - Only NSFW pictures.
+	3. Added Rule34 API. Allows to search NSFW content by tags.
+		Command: rule34
+	4. Added femboy command.
+	Music:
+	1. Added position command.
+	
+	Backend:
+		All code has been rewritten.
+		The bot source code is now open source.
+		The bot now uses .NET Core 7.0
+		The bot now uses Lavalink v4.
+	
+Removed:
+	1. Removed game command, for lack of need.
+	2. Removed the ability to use slash commands.
+	3. Removed join command, for lack of need.```</value>
     <comment/>
   </data>
   <data name="ResetPrefixTitle" xml:space="preserve">
@@ -430,11 +470,47 @@
     <comment/>
   </data>
   <data name="HelpNSFWCommandsList" xml:space="preserve">
-    <value>All of this commands can only be used in NSFW channels.	ass -  Ass picture or gif.	anal - Anal picture or gif.	sex - Sex gif.	masturbation - Masturbation picture or gif.	panties - Panties picture or gif.	pussy - Pussy picture or gif.	blowjob - Blowjob picture or gif.	footjob - Footjob picture or gif.	handjob - Handjob picture or gif.	boobs - Boobs picture or gif.	thighs - Thighs picture or gif.	neko - NSFW picture or gif with neko.	hentai - Random hentai picture or gif.	incest - Incest picture or gif.	yuri - Yuri picture or gif.	femboy - Femboy picture.	paizuri - Boobjob picture.	kitsune - Kitsune picture.	gelbooru - Get post with your tags from Gelbooru.	rule34 - Get post with your tags from Rule34.xxx</value>
+    <value>All of this commands can only be used in NSFW channels.
+	ass -  Ass picture or gif.
+	anal - Anal picture or gif.
+	sex - Sex gif.
+	masturbation - Masturbation picture or gif.
+	panties - Panties picture or gif.
+	pussy - Pussy picture or gif.
+	blowjob - Blowjob picture or gif.
+	footjob - Footjob picture or gif.
+	handjob - Handjob picture or gif.
+	boobs - Boobs picture or gif.
+	thighs - Thighs picture or gif.
+	neko - NSFW picture or gif with neko.
+	hentai - Random hentai picture or gif.
+	incest - Incest picture or gif.
+	yuri - Yuri picture or gif.
+	femboy - Femboy picture.
+	paizuri - Boobjob picture.
+	kitsune - Kitsune picture.
+	gelbooru - Get post with your tags from Gelbooru. **NEW**
+	rule34 - Get post with your tags from Rule34.xxx **NEW**</value>
     <comment/>
   </data>
   <data name="HelpNSFW" xml:space="preserve">
     <value>Use command - a!help nsfw</value>
+    <comment/>
+  </data>
+  <data name="HelpMusicCommands" xml:space="preserve">
+    <value>Music commands</value>
+    <comment/>
+  </data>
+  <data name="HelpMusic" xml:space="preserve">
+    <value>play - Play music.
+	pause - Pause playback.
+	resume - Resume playback.
+	stop - Stop playback.
+	skip - Skip song.
+	position - Position of the song.
+	list - Show current songs in the queue.
+	remove - Remove song from the queue.
+	leave - Leave voice channel.</value>
     <comment/>
   </data>
   <data name="MusicTitle" xml:space="preserve">

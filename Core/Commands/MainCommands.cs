@@ -68,6 +68,12 @@ namespace Azusa.bot_3.Core.Commands
             });
             eb.AddField(x =>
             {
+                x.Name = StringManager.getString(Context.Guild.Id, "HelpMusicCommands");
+                x.Value = StringManager.getString(Context.Guild.Id, "HelpMusic");
+                x.IsInline = false;
+            });
+            eb.AddField(x =>
+            {
                 x.Name = StringManager.getString(Context.Guild.Id, "HelpNSFWCommands");
                 x.Value = StringManager.getString(Context.Guild.Id, "HelpNSFW");
                 x.IsInline = false;
