@@ -134,16 +134,7 @@
     <comment/>
   </data>
   <data name="HelpMainCommandsList" xml:space="preserve">
-    <value>random - Случайное число в заданном диапозоне.
-	kick - Кикнуть пользователя.
-	ban - Забанить пользователя.
-	purge - Удалить заданное количество сообщений.
-	language - Сменить текущий язык.
-	flipcoin - Подкинуть монетку.
-	setprefix - Установить кастомный префикс для бота. Только администратор сервера может выполнить эту команду.
-	resetprefix - Сбросить префикс на стандартный. Только администратор сервера может выполнить эту команду.
-	forgotprefix - Напомнить кастомный префикс, если вы его забыли. Используйте со стандартным префиксом a!.
-	whatsnew - Отправляет changelog последнего крупного обновления.</value>
+    <value>random - Случайное число в заданном диапозоне.	kick - Кикнуть пользователя.	ban - Забанить пользователя.	purge - Удалить заданное количество сообщений.	language - Сменить текущий язык.	flipcoin - Подкинуть монетку.	setprefix - Установить кастомный префикс для бота. Только администратор сервера может выполнить эту команду.	resetprefix - Сбросить префикс на стандартный. Только администратор сервера может выполнить эту команду.	forgotprefix - Напомнить кастомный префикс, если вы его забыли. Используйте со стандартным префиксом a!.	whatsnew - Отправляет changelog последнего крупного обновления.</value>
     <comment/>
   </data>
   <data name="NameError" xml:space="preserve">
@@ -431,17 +422,7 @@
     <comment/>
   </data>
   <data name="HelpFunCommandsList" xml:space="preserve">
-    <value>hello - Поздороваться с ботом.
-	goodjob - Похвалить бота.
-	chatviblyadkov - Отправить гифку: Чат выблядков.
-	hug - Обнять пользователя.
-	kiss - Поцеловать пользователя.
-	pat - Погладить пользователя.
-	cry - Начать плакать.
-	slap - Ударить пользователя.
-	lick - Лизнуть пользователя.
-	chatgpt - Спросить что-то у ChatGPT. Занимает немного времени, будьте терпеливы.
-	safegelbooru - Пост по тегам с сайта Gelbooru. Фильтрует NSFW контент.</value>
+    <value>hello - Поздороваться с ботом.	goodjob - Похвалить бота.	chatviblyadkov - Отправить гифку: Чат выблядков.	hug - Обнять пользователя.	kiss - Поцеловать пользователя.	pat - Погладить пользователя.	cry - Начать плакать.	slap - Ударить пользователя.	lick - Лизнуть пользователя.	chatgpt - Спросить что-то у ChatGPT. Занимает немного времени, будьте терпеливы.	safegelbooru - Пост по тегам с сайта Gelbooru. Фильтрует NSFW контент.</value>
     <comment/>
   </data>
   <data name="HelpNSFWCommands" xml:space="preserve">
@@ -449,31 +430,127 @@
     <comment/>
   </data>
   <data name="HelpNSFWCommandsList" xml:space="preserve">
-    <value>Эти комадны могут быть использованы только в NSFW каналах.
-	ass - Картинка или гифка с задницей.
-	anal - Картинка или гифка с аналом.
-	sex - Гифка с сексом.
-	masturbation - Картинка или гифка с мастурбацией.
-	panties - Картинка или гифка с трусиками.
-	pussy - Картинка или гифка с вагиной.
-	blowjob - Картинка или гифка минета.
-	footjob - Картинка или гифка с футджобом.
-	handjob - Картинка или гифка с дрочкой.
-	boobs - Картинка или гифка с сиськами.
-	thighs - Картинка или гифка с ляжками.
-	neko - Картинка или гифка с участием неко.
-	hentai - Рандомная картинка или гифка жанра hentai.
-	incest - Картинка или гифка с инцестом.
-	yuri - Картинка или гифка с юри.
-	femboy - Картинка с фембоями.
-	paizuri - Картинка с сиськотрахом.
-	kitsune - Картинка с китсуне.
-	gelbooru - Пост по тегам с сайта Gelbooru.
-	rule34 - Пост по тегам с сайта Rule34.xxx</value>
+    <value>Эти комадны могут быть использованы только в NSFW каналах.	ass - Картинка или гифка с задницей.	anal - Картинка или гифка с аналом.	sex - Гифка с сексом.	masturbation - Картинка или гифка с мастурбацией.	panties - Картинка или гифка с трусиками.	pussy - Картинка или гифка с вагиной.	blowjob - Картинка или гифка минета.	footjob - Картинка или гифка с футджобом.	handjob - Картинка или гифка с дрочкой.	boobs - Картинка или гифка с сиськами.	thighs - Картинка или гифка с ляжками.	neko - Картинка или гифка с участием неко.	hentai - Рандомная картинка или гифка жанра hentai.	incest - Картинка или гифка с инцестом.	yuri - Картинка или гифка с юри.	femboy - Картинка с фембоями.	paizuri - Картинка с сиськотрахом.	kitsune - Картинка с китсуне.	gelbooru - Пост по тегам с сайта Gelbooru.	rule34 - Пост по тегам с сайта Rule34.xxx</value>
     <comment/>
   </data>
   <data name="HelpNSFW" xml:space="preserve">
     <value>Используйте комманду - a!help nsfw</value>
+    <comment/>
+  </data>
+  <data name="MusicNoResults" xml:space="preserve">
+    <value>:warning: Ничего не найдено:</value>
+    <comment/>
+  </data>
+  <data name="MusicTitle" xml:space="preserve">
+    <value>:musical_note: Музыка</value>
+    <comment/>
+  </data>
+  <data name="MusicNowPlaying" xml:space="preserve">
+    <value>**Проигрывается:**</value>
+    <comment/>
+  </data>
+  <data name="MusicPlay" xml:space="preserve">
+    <value>:sound: Проиграть композицию.</value>
+    <comment/>
+  </data>
+  <data name="MusicNothingPlaying" xml:space="preserve">
+    <value>Ничего не проигрывается.</value>
+    <comment/>
+  </data>
+  <data name="MusicStop" xml:space="preserve">
+    <value>:mute: Остановить проигрывание.</value>
+    <comment/>
+  </data>
+  <data name="MusicStoppedPlaying" xml:space="preserve">
+    <value>Проигрывание остановлено.</value>
+    <comment/>
+  </data>
+  <data name="MusicPause" xml:space="preserve">
+    <value>:speaker: Приостановить проигрывание.</value>
+    <comment/>
+  </data>
+  <data name="MusicResume" xml:space="preserve">
+    <value>:sound: Возобновить проигрывание.</value>
+    <comment/>
+  </data>
+  <data name="MusicPaused" xml:space="preserve">
+    <value>Проигрывание приостановлено.</value>
+    <comment/>
+  </data>
+  <data name="MusicResumed" xml:space="preserve">
+    <value>Проигрывание возобновлено.</value>
+    <comment/>
+  </data>
+  <data name="MusicAlreadyPaused" xml:space="preserve">
+    <value>Проигрывание уже приостановлено.</value>
+    <comment/>
+  </data>
+  <data name="MusicAlreadyResumed" xml:space="preserve">
+    <value>Проигрывание не остановлено.</value>
+    <comment/>
+  </data>
+  <data name="MusicSkip" xml:space="preserve">
+    <value>:arrow_forward: Пропустить композицию.</value>
+    <comment/>
+  </data>
+  <data name="MusicSkipped" xml:space="preserve">
+    <value>**Пропущено:**</value>
+    <comment/>
+  </data>
+  <data name="MusicPosition" xml:space="preserve">
+    <value>Время.</value>
+    <comment/>
+  </data>
+  <data name="MusicPositionText" xml:space="preserve">
+    <value>**Время проигрывания:**</value>
+    <comment/>
+  </data>
+  <data name="MusicList" xml:space="preserve">
+    <value>Очередь.</value>
+    <comment/>
+  </data>
+  <data name="MusicQueueEmpty" xml:space="preserve">
+    <value>Очередь пуста.</value>
+    <comment/>
+  </data>
+  <data name="MusicLeave" xml:space="preserve">
+    <value>Покинуть канал.</value>
+    <comment/>
+  </data>
+  <data name="MusicLeft" xml:space="preserve">
+    <value>Покинула канал.</value>
+    <comment/>
+  </data>
+  <data name="MusicRemove" xml:space="preserve">
+    <value>Убрать из очереди.</value>
+    <comment/>
+  </data>
+  <data name="MusicRemoveIndexZero" xml:space="preserve">
+    <value>Номер не может быть нулём.</value>
+    <comment/>
+  </data>
+  <data name="MusicSongDoesntExist" xml:space="preserve">
+    <value>Композиция не существует.</value>
+    <comment/>
+  </data>
+  <data name="MusicRemoved" xml:space="preserve">
+    <value>**Убрано из очереди:**</value>
+    <comment/>
+  </data>
+  <data name="MusicError" xml:space="preserve">
+    <value>:warning: Ошибка</value>
+    <comment/>
+  </data>
+  <data name="MusicUserNull" xml:space="preserve">
+    <value>Вы не подключены к каналу.</value>
+    <comment/>
+  </data>
+  <data name="MusicBotNull" xml:space="preserve">
+    <value>Я не подключена к каналу.</value>
+    <comment/>
+  </data>
+  <data name="MusicUnknownError" xml:space="preserve">
+    <value>:x: Неизвестная ошибка!</value>
     <comment/>
   </data>
 </root>

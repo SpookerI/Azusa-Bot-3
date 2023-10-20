@@ -10,12 +10,15 @@ using Lavalink4NET.Rest.Entities.Tracks;
 using System.Text;
 using System.Linq;
 using System;
+using Discord;
+using Azusa.bot_3.Language;
 
 namespace Azusa.bot_3.Core.Commands
 {
     public class MusicCommands : ModuleBase<SocketCommandContext>
     {
         private readonly IAudioService lavalink;
+        StringManager stringManager = new StringManager();
 
         public MusicCommands(IAudioService lavalink)
         {
@@ -23,8 +26,9 @@ namespace Azusa.bot_3.Core.Commands
             lavalink.StartAsync();
         }
         [Command("play")]
-        public async Task PlayAsync(string query)
+        public async Task PlayAsync([Remainder]string query)
         {
+            var eb = new EmbedBuilder();
             var user = Context.User as SocketGuildUser;
             var player = await GetPlayerAsync(connectToVoiceChannel: true, user).ConfigureAwait(false);
             if (player is null)
@@ -36,15 +40,30 @@ namespace Azusa.bot_3.Core.Commands
                     .ConfigureAwait(false);
             if (track is null)
             {
-                await Context.Channel.SendMessageAsync("No results.").ConfigureAwait(false);
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicPlay");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicNoResults") + $" {query}";
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
             await player.PlayAsync(track).ConfigureAwait(false);
-            await Context.Channel.SendMessageAsync($"Playing: {track.Title}").ConfigureAwait(false);
+            eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+            eb.AddField(x =>
+            {
+                x.Name = stringManager.getString(Context.Guild.Id, "MusicPlay");
+                x.Value = stringManager.getString(Context.Guild.Id, "MusicNowPlaying") + $" {track.Title}";
+                x.IsInline = false;
+            });
+            await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
         }
         [Command("stop")]
         public async Task StopAsync()
         {
+            var eb = new EmbedBuilder();
             var user = Context.User as SocketGuildUser;
             var player = await GetPlayerAsync(connectToVoiceChannel: false, user).ConfigureAwait(false);
             if (player is null)
@@ -53,32 +72,62 @@ namespace Azusa.bot_3.Core.Commands
             }
             if (player.CurrentTrack is null)
             {
-                await Context.Channel.SendMessageAsync("Nothing playing!").ConfigureAwait(false);
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicStop");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicNothingPlaying");
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
             await player.StopAsync().ConfigureAwait(false);
-            await Context.Channel.SendMessageAsync("Stopped playing.").ConfigureAwait(false);
+            eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+            eb.AddField(x =>
+            {
+                x.Name = stringManager.getString(Context.Guild.Id, "MusicStop");
+                x.Value = stringManager.getString(Context.Guild.Id, "MusicStoppedPlaying");
+                x.IsInline = false;
+            });
+            await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
         }
         [Command("pause")]
         public async Task PauseAsync()
         {
+            var eb = new EmbedBuilder();
             var user = Context.User as SocketGuildUser;
             var player = await GetPlayerAsync(connectToVoiceChannel: false, user).ConfigureAwait(false);
             if (player is null)
             {
                 return;
             }
-            if (player.State is  PlayerState.Paused)
+            if (player.State is PlayerState.Paused)
             {
-                await Context.Channel.SendMessageAsync("Player is already paused.").ConfigureAwait(false);
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicPause");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicAlreadyPaused");
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
             await player.PauseAsync().ConfigureAwait(false);
-            await Context.Channel.SendMessageAsync("Paused.").ConfigureAwait(false);
+            eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+            eb.AddField(x =>
+            {
+                x.Name = stringManager.getString(Context.Guild.Id, "MusicPause");
+                x.Value = stringManager.getString(Context.Guild.Id, "MusicPaused");
+                x.IsInline = false;
+            });
+            await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
         }
         [Command("resume")]
         public async Task ResumeAsync()
         {
+            var eb = new EmbedBuilder();
             var user = Context.User as SocketGuildUser;
             var player = await GetPlayerAsync(connectToVoiceChannel: false, user).ConfigureAwait(false);
             if (player is null)
@@ -87,15 +136,30 @@ namespace Azusa.bot_3.Core.Commands
             }
             if (player.State is not PlayerState.Paused)
             {
-                await Context.Channel.SendMessageAsync("Player is not paused.").ConfigureAwait(false);
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicResume");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicAlreadyResumed");
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
             await player.ResumeAsync().ConfigureAwait(false);
-            await Context.Channel.SendMessageAsync("Resumed.").ConfigureAwait(false);
+            eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+            eb.AddField(x =>
+            {
+                x.Name = stringManager.getString(Context.Guild.Id, "MusicResume");
+                x.Value = stringManager.getString(Context.Guild.Id, "MusicResumed");
+                x.IsInline = false;
+            });
+            await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
         }
         [Command("skip")]
         public async Task SkipAsync()
         {
+            var eb = new EmbedBuilder();
             var user = Context.User as SocketGuildUser;
             var player = await GetPlayerAsync(connectToVoiceChannel: false, user).ConfigureAwait(false);
             if (player is null)
@@ -104,23 +168,30 @@ namespace Azusa.bot_3.Core.Commands
             }
             if (player.CurrentTrack is null)
             {
-                await Context.Channel.SendMessageAsync("Nothing playing!").ConfigureAwait(false);
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicSkip");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicNothingPlaying");
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
+            eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+            eb.AddField(x =>
+            {
+                x.Name = stringManager.getString(Context.Guild.Id, "MusicSkip");
+                x.Value = stringManager.getString(Context.Guild.Id, "MusicSkipped") + $" {player.CurrentTrack.Title}";
+                x.IsInline = false;
+            });
+            await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
             await player.SkipAsync().ConfigureAwait(false);
-            var track = player.CurrentTrack;
-            if (track is not null)
-            {
-                await Context.Channel.SendMessageAsync($"Skipped. Now playing: {track.Uri}").ConfigureAwait(false);
-            }
-            else
-            {
-                await Context.Channel.SendMessageAsync("Skipped. Stopped playing because the queue is now empty.").ConfigureAwait(false);
-            }
         }
         [Command("position")]
         public async Task PositionAsync()
         {
+            var eb = new EmbedBuilder();
             var user = Context.User as SocketGuildUser;
             var player = await GetPlayerAsync(connectToVoiceChannel: true, user).ConfigureAwait(false);
             if (player is null)
@@ -129,14 +200,29 @@ namespace Azusa.bot_3.Core.Commands
             }
             if (player.CurrentTrack is null)
             {
-                await Context.Channel.SendMessageAsync("Nothing playing!").ConfigureAwait(false);
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicPosition");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicNothingPlaying");
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
-            await Context.Channel.SendMessageAsync($"Position: {player.Position?.Position} / {player.CurrentTrack.Duration}.").ConfigureAwait(false);
+            eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+            eb.AddField(x =>
+            {
+                x.Name = stringManager.getString(Context.Guild.Id, "MusicPosition");
+                x.Value = stringManager.getString(Context.Guild.Id, "MusicPositionText") + $" {player.Position?.Position} / {player.CurrentTrack.Duration}";
+                x.IsInline = false;
+            });
+            await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
         }
         [Command("list")]
         public async Task ListAsync()
         {
+            var eb = new EmbedBuilder();
             var descriptionBuilder = new StringBuilder();
             var user = Context.User as SocketGuildUser;
             var player = await GetPlayerAsync(connectToVoiceChannel: true, user).ConfigureAwait(false);
@@ -146,12 +232,26 @@ namespace Azusa.bot_3.Core.Commands
             }
             if (player.CurrentTrack is null)
             {
-                await Context.Channel.SendMessageAsync("Nothing playing!").ConfigureAwait(false);
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicList");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicNothingPlaying");
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
             if(player.Queue.Count < 1 && player.CurrentTrack != null)
             {
-                await Context.Channel.SendMessageAsync("Queue is empty.").ConfigureAwait(false);
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicList");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicNowPlaying") + $" {player.CurrentTrack.Title}" + "\n" + stringManager.getString(Context.Guild.Id, "MusicQueueEmpty");
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
             else
@@ -159,15 +259,23 @@ namespace Azusa.bot_3.Core.Commands
                 var trackNum = 1;
                 foreach(var track in player.Queue)
                 {
-                    descriptionBuilder.Append($"{trackNum}: [{track.Track.Title}]");
+                    descriptionBuilder.Append($"{trackNum}: [{track.Track.Title}]\n");
                     trackNum++;
                 }
-                await Context.Channel.SendMessageAsync(descriptionBuilder.ToString());
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicList");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicNowPlaying") + $" {player.CurrentTrack.Title}" + "\n" + descriptionBuilder.ToString();
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
             }
         }
         [Command("leave")]
         public async Task LeaveAsync()
         {
+            var eb = new EmbedBuilder();
             var user = Context.User as SocketGuildUser;
             var player = await GetPlayerAsync(connectToVoiceChannel: true, user).ConfigureAwait(false);
             if (player is null)
@@ -176,11 +284,19 @@ namespace Azusa.bot_3.Core.Commands
             }
             await player.StopAsync();
             await player.DisconnectAsync();
-            await Context.Channel.SendMessageAsync("Disconnected.");
+            eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+            eb.AddField(x =>
+            {
+                x.Name = stringManager.getString(Context.Guild.Id, "MusicLeave");
+                x.Value = stringManager.getString(Context.Guild.Id, "MusicLeft");
+                x.IsInline = false;
+            });
+            await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
         }
         [Command("remove")]
         public async Task RemoveSongAsync(int trackNum)
         {
+            var eb = new EmbedBuilder();
             var user = Context.User as SocketGuildUser;
             var player = await GetPlayerAsync(connectToVoiceChannel: true, user).ConfigureAwait(false);
             if (player is null)
@@ -189,30 +305,67 @@ namespace Azusa.bot_3.Core.Commands
             }
             if (trackNum == 0)
             {
-                await Context.Channel.SendMessageAsync("Track number cannot be zero.");
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicRemove");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicRemoveIndexZero");
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
             if (player.Queue.Count == 0)
             {
-                await Context.Channel.SendMessageAsync("Queue is empty.");
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicRemove");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicQueueEmpty");
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
             if (player.Queue.Count < trackNum - 1)
             {
-                await Context.Channel.SendMessageAsync("Song doesn't exist.");
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicRemove");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicSongDoesntExist");
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
             var toRemove = player.Queue.ElementAt(trackNum - 1);
             if (toRemove == null)
             {
-                await Context.Channel.SendMessageAsync("Song doesn't exist.");
+                eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                eb.AddField(x =>
+                {
+                    x.Name = stringManager.getString(Context.Guild.Id, "MusicRemove");
+                    x.Value = stringManager.getString(Context.Guild.Id, "MusicSongDoesntExist");
+                    x.IsInline = false;
+                });
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return;
             }
+            string songName = player.Queue.ElementAt(trackNum - 1).Track.Title;
             await player.Queue.RemoveAsync(player.Queue.ElementAt(trackNum - 1));
-            await Context.Channel.SendMessageAsync("Removed from queue.");
+            eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+            eb.AddField(x =>
+            {
+                x.Name = stringManager.getString(Context.Guild.Id, "MusicRemove");
+                x.Value = stringManager.getString(Context.Guild.Id, "MusicRemoved") + $" {songName}";
+                x.IsInline = false;
+            });
+            await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
         }
         private async ValueTask<QueuedLavalinkPlayer?> GetPlayerAsync(bool connectToVoiceChannel = true, SocketGuildUser user = null)
         {
+            var eb = new EmbedBuilder();
             var channelBehavior = connectToVoiceChannel 
                 ? PlayerChannelBehavior.Join
                 : PlayerChannelBehavior.None;
@@ -226,14 +379,44 @@ namespace Azusa.bot_3.Core.Commands
 
             if (!result.IsSuccess)
             {
-                var errorMessage = result.Status switch
+                /*var errorMessage = result.Status switch
                 {
-                    PlayerRetrieveStatus.UserNotInVoiceChannel => "You are not connected to a voice channel.",
-                    PlayerRetrieveStatus.BotNotConnected => "The bot is currently not connected.",
-                    _ => "Unknown error.",
-                };
+                    PlayerRetrieveStatus.UserNotInVoiceChannel => "UserNotConnected",
+                    PlayerRetrieveStatus.BotNotConnected => "BotNotConnected",
+                    _ => "ERR",
+                };*/
+                switch (result.Status)
+                {
+                    case PlayerRetrieveStatus.UserNotInVoiceChannel:
+                        eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                        eb.AddField(x =>
+                        {
+                            x.Name = stringManager.getString(Context.Guild.Id, "MusicError");
+                            x.Value = stringManager.getString(Context.Guild.Id, "MusicUserNull");
+                            x.IsInline = false;
+                        });
+                        break;
+                    case PlayerRetrieveStatus.BotNotConnected:
+                        eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                        eb.AddField(x =>
+                        {
+                            x.Name = stringManager.getString(Context.Guild.Id, "MusicError");
+                            x.Value = stringManager.getString(Context.Guild.Id, "MusicBotNull");
+                            x.IsInline = false;
+                        });
+                        break;
+                    default:
+                        eb.WithTitle(stringManager.getString(Context.Guild.Id, "MusicTitle"));
+                        eb.AddField(x =>
+                        {
+                            x.Name = stringManager.getString(Context.Guild.Id, "MusicError");
+                            x.Value = stringManager.getString(Context.Guild.Id, "MusicUnknownError");
+                            x.IsInline = false;
+                        });
+                        break;
+                }
 
-                await Context.Channel.SendMessageAsync(errorMessage).ConfigureAwait(false);
+                await Context.Channel.SendMessageAsync("", false, eb.Build()).ConfigureAwait(false);
                 return null;
             }
 
