@@ -32,147 +32,6 @@ namespace Azusa.bot_3.Core.Commands
                 await Context.Channel.SendMessageAsync("", false, eb.Build());
             }
         }
-        [Command("anal")]
-        public async Task Anal()
-        {
-            var eb = new EmbedBuilder();
-            ITextChannel channel = (ITextChannel)Context.Channel; // Get current channel to check for NSFW attribute.
-            if (channel.IsNsfw)
-            {
-                string url = APIManager.GetAPIURLNSFW("anal");
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(":wink:");
-                eb.WithImageUrl(url);
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-            else
-            {
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(StringManager.getString(Context.Guild.Id, "NSFWCommandChannelError"));
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-        }
-        [Command("sex")]
-        public async Task Sex()
-        {
-            var eb = new EmbedBuilder();
-            ITextChannel channel = (ITextChannel)Context.Channel; // Get current channel to check for NSFW attribute.
-            if (channel.IsNsfw)
-            {
-                Random rnd = new Random();
-                string url = rnd.Next(0, 2) == 0 ? APIManager.GetAPIURLNSFW("classic") : APIManager.GetAPIURLNSFW("gif");
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(":wink:");
-                eb.WithImageUrl(url);
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-            else
-            {
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(StringManager.getString(Context.Guild.Id, "NSFWCommandChannelError"));
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-        }
-        [Command("masturbation")]
-        public async Task Masturbation()
-        {
-            var eb = new EmbedBuilder();
-            ITextChannel channel = (ITextChannel)Context.Channel; // Get current channel to check for NSFW attribute.
-            if (channel.IsNsfw)
-            {
-                string url = APIManager.GetAPIURLNSFW("masturbation");
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(":wink:");
-                eb.WithImageUrl(url);
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-            else
-            {
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(StringManager.getString(Context.Guild.Id, "NSFWCommandChannelError"));
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-        }
-        [Command("panties")]
-        public async Task Panties()
-        {
-            var eb = new EmbedBuilder();
-            ITextChannel channel = (ITextChannel)Context.Channel; // Get current channel to check for NSFW attribute.
-            if (channel.IsNsfw)
-            {
-                string url = APIManager.GetAPIURLNSFW("pantsu");
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(":wink:");
-                eb.WithImageUrl(url);
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-            else
-            {
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(StringManager.getString(Context.Guild.Id, "NSFWCommandChannelError"));
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-        }
-        [Command("pussy")]
-        public async Task Pussy()
-        {
-            var eb = new EmbedBuilder();
-            ITextChannel channel = (ITextChannel)Context.Channel; // Get current channel to check for NSFW attribute.
-            if (channel.IsNsfw)
-            {
-                string url = APIManager.GetAPIURLNSFW("pussy");
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(":wink:");
-                eb.WithImageUrl(url);
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-            else
-            {
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(StringManager.getString(Context.Guild.Id, "NSFWCommandChannelError"));
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-        }
-        [Command("blowjob")]
-        public async Task Blowjob()
-        {
-            var eb = new EmbedBuilder();
-            ITextChannel channel = (ITextChannel)Context.Channel; // Get current channel to check for NSFW attribute.
-            if (channel.IsNsfw)
-            {
-                string url = APIManager.GetAPIURLNSFW("blowjob");
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(":wink:");
-                eb.WithImageUrl(url);
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-            else
-            {
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(StringManager.getString(Context.Guild.Id, "NSFWCommandChannelError"));
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-        }
-        [Command("footjob")]
-        public async Task Footjob()
-        {
-            var eb = new EmbedBuilder();
-            ITextChannel channel = (ITextChannel)Context.Channel; // Get current channel to check for NSFW attribute.
-            if (channel.IsNsfw)
-            {
-                string url = APIManager.GetAPIURLNSFW("footjob");
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(":wink:");
-                eb.WithImageUrl(url);
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-            else
-            {
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(StringManager.getString(Context.Guild.Id, "NSFWCommandChannelError"));
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-        }
         [Command("boobs")]
         public async Task Boobs()
         {
@@ -253,26 +112,6 @@ namespace Azusa.bot_3.Core.Commands
                 await Context.Channel.SendMessageAsync("", false, eb.Build());
             }
         }
-        [Command("incest")]
-        public async Task Incest()
-        {
-            var eb = new EmbedBuilder();
-            ITextChannel channel = (ITextChannel)Context.Channel; // Get current channel to check for NSFW attribute.
-            if (channel.IsNsfw)
-            {
-                string url = APIManager.GetAPIURLNSFW("incest");
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(":wink:");
-                eb.WithImageUrl(url);
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-            else
-            {
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(StringManager.getString(Context.Guild.Id, "NSFWCommandChannelError"));
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-        }
         [Command("yuri")]
         public async Task Yuri()
         {
@@ -281,26 +120,6 @@ namespace Azusa.bot_3.Core.Commands
             if (channel.IsNsfw)
             {
                 string url = APIManager.GetAPIV2("hyuri");
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(":wink:");
-                eb.WithImageUrl(url);
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-            else
-            {
-                eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
-                eb.WithDescription(StringManager.getString(Context.Guild.Id, "NSFWCommandChannelError"));
-                await Context.Channel.SendMessageAsync("", false, eb.Build());
-            }
-        }
-        [Command("handjob")]
-        public async Task Handjob()
-        {
-            var eb = new EmbedBuilder();
-            ITextChannel channel = (ITextChannel)Context.Channel; // Get current channel to check for NSFW attribute.
-            if (channel.IsNsfw)
-            {
-                string url = APIManager.GetAPIURLNSFW("handjob");
                 eb.WithTitle(StringManager.getString(Context.Guild.Id, "NSFWCommandTitle"));
                 eb.WithDescription(":wink:");
                 eb.WithImageUrl(url);

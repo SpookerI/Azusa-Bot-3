@@ -106,6 +106,38 @@ namespace Azusa.bot_3.Core.Commands
                 await Context.Channel.SendMessageAsync(url);
             }
         }
+        [Command("wink")]
+        public async Task Wink(SocketUser winkedAtUser = null)
+        {
+            var eb = new EmbedBuilder();
+            string winkedAtUserString = null;
+            var user = Context.User.Mention;
+            string userString = Context.User.ToString();
+            if (winkedAtUser != null)
+                winkedAtUserString = winkedAtUser.ToString();
+            string url = APIManager.GetAPIURLSFW("wink");
+            if (winkedAtUser == null)
+            {
+                eb.WithTitle($"{StringManager.getString(Context.Guild.Id, "WinkTitle")}");
+                eb.WithDescription(user + $" {StringManager.getString(Context.Guild.Id, "WinkNull")}");
+                await Context.Channel.SendMessageAsync("", false, eb.Build());
+                await Context.Channel.SendMessageAsync(url);
+            }
+            if (userString == winkedAtUserString)
+            {
+                eb.WithTitle($"{StringManager.getString(Context.Guild.Id, "WinkTitle")}");
+                eb.WithDescription(user + $" {StringManager.getString(Context.Guild.Id, "WinkNull")}");
+                await Context.Channel.SendMessageAsync("", false, eb.Build());
+                await Context.Channel.SendMessageAsync(url);
+            }
+            else
+            {
+                eb.WithTitle($"{StringManager.getString(Context.Guild.Id, "WinkTitle")}");
+                eb.WithDescription(user + $" {StringManager.getString(Context.Guild.Id, "WinkMention")} " + winkedAtUser.Mention);
+                await Context.Channel.SendMessageAsync("", false, eb.Build());
+                await Context.Channel.SendMessageAsync(url);
+            }
+        }
         [Command("pat")]
         public async Task Pat(SocketUser pattedUser = null)
         {
@@ -268,6 +300,28 @@ namespace Azusa.bot_3.Core.Commands
                 eb.WithImageUrl(url);
                 await Context.Channel.SendMessageAsync("", false, eb.Build());
             }
+        }
+        [Command("no")]
+        public async Task No()
+        {
+            var eb = new EmbedBuilder();
+            var user = Context.User.Mention;
+            string url = APIManager.GetAPIURLSFW("no");
+            eb.WithTitle($"{StringManager.getString(Context.Guild.Id, "FunSayNoTitle")}");
+            eb.WithDescription(user + $" {StringManager.getString(Context.Guild.Id, "FunSayNoMessage")}");
+            await Context.Channel.SendMessageAsync("", false, eb.Build());
+            await Context.Channel.SendMessageAsync(url);
+        }
+        [Command("yes")]
+        public async Task Yes()
+        {
+            var eb = new EmbedBuilder();
+            var user = Context.User.Mention;
+            string url = APIManager.GetAPIURLSFW("yes");
+            eb.WithTitle($"{StringManager.getString(Context.Guild.Id, "FunSayYesTitle")}");
+            eb.WithDescription(user + $" {StringManager.getString(Context.Guild.Id, "FunSayYesMessage")}");
+            await Context.Channel.SendMessageAsync("", false, eb.Build());
+            await Context.Channel.SendMessageAsync(url);
         }
     }
 }
