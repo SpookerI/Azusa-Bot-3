@@ -11,8 +11,7 @@ namespace Azusa.bot_3.Core.Managers
     {
         public static WebClient api = new WebClient();
         public static string replyPath = "API/";
-        public static string sfwURL = "https://hmtai.hatsunia.cfd/sfw/";
-        public static string nsfwURL = "https://hmtai.hatsunia.cfd/nsfw/";
+        public static string sfwURL = "https://api.otakugifs.xyz/gif?reaction=";
         public static string apiV2 = "https://nekobot.xyz/api/image?type=";
         public static string gelbooruAPI = "https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=";
         public static string rule34API = "https://api.rule34.xxx/index.php?page=dapi&s=post&q=index&tags=";
@@ -23,18 +22,6 @@ namespace Azusa.bot_3.Core.Managers
             Random rnd = new Random();
             int randomNumber = rnd.Next(0, 1000);
             api.DownloadFile(sfwURL + command, replyPath + "reply" + randomNumber + ".json");
-            var json = File.ReadAllText(replyPath + "reply" + randomNumber + ".json");
-            var reply = JsonConvert.DeserializeObject<dynamic>(json);
-            url = reply.url;
-            File.Delete(replyPath + "reply" + randomNumber + ".json");
-            return url;
-        }
-        public static string GetAPIURLNSFW(string command)
-        {
-            string url = null;
-            Random rnd = new Random();
-            int randomNumber = rnd.Next(0, 1000);
-            api.DownloadFile(nsfwURL + command, replyPath + "reply" + randomNumber + ".json");
             var json = File.ReadAllText(replyPath + "reply" + randomNumber + ".json");
             var reply = JsonConvert.DeserializeObject<dynamic>(json);
             url = reply.url;
@@ -63,7 +50,7 @@ namespace Azusa.bot_3.Core.Managers
             int randomNumber = rnd.Next(0, 1000);
             try
             {
-                api.DownloadFile(gelbooruAPI + tags + $"&limit=1&pid=0{apiKey}", replyPath + "gelbooruAPI_" + randomNumber + ".json");
+                api.DownloadFile(gelbooruAPI + tags + $"&json=1&limit=1&pid=0{apiKey}", replyPath + "gelbooruAPI_" + randomNumber + ".json");
                 var jsonCount = File.ReadAllText(replyPath + "gelbooruAPI_" + randomNumber + ".json");
                 var checkCount = JsonConvert.DeserializeObject<dynamic>(jsonCount);
                 int postCount = checkCount["@attributes"]["count"]; // Checks overall amount of posts by this tags.

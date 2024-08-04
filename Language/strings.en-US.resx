@@ -160,6 +160,9 @@
 	cry - Start crying.
 	slap - Slap another user.
 	lick - Lick another user.
+    wink - Wink at another user.
+    no - Say no.
+    yes - Say yes.
 	chatgpt - Ask a question on ChatGPT. Might take some time, please be patient.(Beta)
 	safegelbooru - Get post with your tags from Gelbooru. Filters NSFW content</value>
     <comment/>
@@ -288,14 +291,17 @@
     <value>```Azusa.bot 3.0: New APIs and cosmetic changes.
 	
 Additions and improvements:
-	1. The bot now uses EmbedBuilder instead of plain text. It looks prettier.
+	1. The bot now uses EmbedBuilder instead of plain text. It looks better.
 	2. Added Gelbooru API. Allows you to search for any anime pictures by tags.
 		Commands: safegelbooru - Filters NSFW pictures. gelbooru - Only NSFW pictures.
 	3. Added Rule34 API. Allows to search NSFW content by tags.
 		Command: rule34
 	4. Added femboy command.
+    5. Added "no" command.
+    6. Added "yes" command.
+    7. Added "wink" command.
 	Music:
-	1. Added position command.
+	1. Added "position" command.
 	
 	Backend:
 		All code has been rewritten.
@@ -472,19 +478,10 @@ Removed:
   <data name="HelpNSFWCommandsList" xml:space="preserve">
     <value>All of this commands can only be used in NSFW channels.
 	ass -  Ass picture or gif.
-	anal - Anal picture or gif.
-	sex - Sex gif.
-	masturbation - Masturbation picture or gif.
-	panties - Panties picture or gif.
-	pussy - Pussy picture or gif.
-	blowjob - Blowjob picture or gif.
-	footjob - Footjob picture or gif.
-	handjob - Handjob picture or gif.
 	boobs - Boobs picture or gif.
 	thighs - Thighs picture or gif.
 	neko - NSFW picture or gif with neko.
 	hentai - Random hentai picture or gif.
-	incest - Incest picture or gif.
 	yuri - Yuri picture or gif.
 	femboy - Femboy picture.
 	paizuri - Boobjob picture.
@@ -627,6 +624,34 @@ Removed:
   </data>
   <data name="MusicUnknownError" xml:space="preserve">
     <value>:x: Unknown error!</value>
+    <comment/>
+  </data>
+  <data name="FunSayNoTitle" xml:space="preserve">
+    <value>No</value>
+    <comment/>
+  </data>
+  <data name="FunSayNoMessage" xml:space="preserve">
+    <value> said no.</value>
+    <comment/>
+  </data>
+  <data name="FunSayYesTitle" xml:space="preserve">
+    <value>Yes</value>
+    <comment/>
+  </data>
+  <data name="FunSayYesMessage" xml:space="preserve">
+    <value> said yes.</value>
+    <comment/>
+  </data>
+  <data name="WinkTitle" xml:space="preserve">
+    <value>Wink</value>
+    <comment/>
+  </data>
+  <data name="WinkNull" xml:space="preserve">
+    <value> winked.</value>
+    <comment/>
+  </data>
+  <data name="WinkMention" xml:space="preserve">
+    <value> winked at </value>
     <comment/>
   </data>
 </root>
